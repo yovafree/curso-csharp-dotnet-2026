@@ -32,6 +32,8 @@ Entre los temas que este repositorio irá cubriendo se encuentran:
 curso-csharp-dotnet-2026/
 ├── sesion1/
 │   └── MiPrimeraApp/
+├── sesion2/
+│   └── ejemplo1/
 └── README.md
 ```
 
@@ -40,3 +42,4 @@ curso-csharp-dotnet-2026/
 | Sesion | Contenido | Acceso |
 | --- | --- | --- |
 | Sesion 1 | Primera aplicación en .NET 10, estructura básica de proyecto y punto de partida del curso | [sesion1/MiPrimeraApp](./sesion1/MiPrimeraApp/) |
+| Sesion 2 | Introducción a ASP.NET: Minimal APIs (endpoints con `MapGet`), controladores estilo MVC (`ProductosController`) y uso básico de logging (`ILogger`) | [sesion2/ejemplo1](./sesion2/ejemplo1/) |
