@@ -30,9 +30,13 @@ Entre los temas que este repositorio irá cubriendo se encuentran:
 
 ```text
 curso-csharp-dotnet-2026/
+├── img/
 ├── sesion1/
 │   └── MiPrimeraApp/
 ├── sesion2/
+│   └── ejemplo1/
+├── sesion3/
+│   ├── Sesion 3.json
 │   └── ejemplo1/
 └── README.md
 ```
@@ -43,3 +47,11 @@ curso-csharp-dotnet-2026/
 | --- | --- | --- |
 | Sesion 1 | Primera aplicación en .NET 10, estructura básica de proyecto y punto de partida del curso | [sesion1/MiPrimeraApp](./sesion1/MiPrimeraApp/) |
 | Sesion 2 | Introducción a ASP.NET: Minimal APIs (endpoints con `MapGet`), controladores estilo MVC (`ProductosController`) y uso básico de logging (`ILogger`) | [sesion2/ejemplo1](./sesion2/ejemplo1/) |
+| Sesion 3 | ASP.NET con Entity Framework Core: configuración de `DbContext`, base de datos en memoria (`UseInMemoryDatabase`) y CRUD completo de productos (GET, GET por id, POST, PUT, DELETE) | [sesion3/ejemplo1](./sesion3/ejemplo1/) |
+
+## Ejemplos incorporados recientemente
+
+- **Persistencia con EF Core en memoria**: configuración de `AppDbContext` y registro con `AddDbContext`.
+- **Datos semilla**: carga inicial de productos al iniciar la aplicación.
+- **API CRUD completa**: operaciones para listar, crear, actualizar y eliminar productos.
+- **Validación y respuestas HTTP apropiadas**: uso de `Ok`, `CreatedAtAction`, `NoContent` y `NotFound`.

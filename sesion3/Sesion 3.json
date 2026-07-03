@@ -1,0 +1,147 @@
+{
+  "info": {
+    "name": "Sesion 3",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear Producto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:5050/api/productos",
+          "protocol": "http",
+          "host": [
+            "localhost:5050"
+          ],
+          "path": [
+            "api",
+            "productos"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Televisor Samsung 75 pulg\",\n  \"precio\": 8000.50\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Lista Productos",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:5050/api/productos",
+          "protocol": "http",
+          "host": [
+            "localhost:5050"
+          ],
+          "path": [
+            "api",
+            "productos"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Actualizar Producto",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:5050/api/productos/2",
+          "protocol": "http",
+          "host": [
+            "localhost:5050"
+          ],
+          "path": [
+            "api",
+            "productos",
+            "2"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Televisor Samsung 55 pulg\",\n  \"precio\": 5500.50\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Eliminar Producto",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:5050/api/productos/1",
+          "protocol": "http",
+          "host": [
+            "localhost:5050"
+          ],
+          "path": [
+            "api",
+            "productos",
+            "1"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": []
+}
