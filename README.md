@@ -38,6 +38,8 @@ curso-csharp-dotnet-2026/
 ├── sesion3/
 │   ├── Sesion 3.json
 │   └── ejemplo1/
+├── sesion4/
+│   └── TiendaWeb.Mvc/
 └── README.md
 ```
 
@@ -48,6 +50,7 @@ curso-csharp-dotnet-2026/
 | Sesion 1 | Primera aplicación en .NET 10, estructura básica de proyecto y punto de partida del curso | [sesion1/MiPrimeraApp](./sesion1/MiPrimeraApp/) |
 | Sesion 2 | Introducción a ASP.NET: Minimal APIs (endpoints con `MapGet`), controladores estilo MVC (`ProductosController`) y uso básico de logging (`ILogger`) | [sesion2/ejemplo1](./sesion2/ejemplo1/) |
 | Sesion 3 | ASP.NET con Entity Framework Core: configuración de `DbContext`, base de datos en memoria (`UseInMemoryDatabase`) y CRUD completo de productos (GET, GET por id, POST, PUT, DELETE) | [sesion3/ejemplo1](./sesion3/ejemplo1/) |
+| Sesion 4 | ASP.NET Core MVC con vistas Razor: aplicación `TiendaWeb.Mvc`, `AppDbContext` con EF Core en memoria y CRUD web para Productos y Estudiantes | [sesion4/TiendaWeb.Mvc](./sesion4/TiendaWeb.Mvc/) |
 
 ## Ejemplos incorporados recientemente
 
@@ -55,3 +58,23 @@ curso-csharp-dotnet-2026/
 - **Datos semilla**: carga inicial de productos al iniciar la aplicación.
 - **API CRUD completa**: operaciones para listar, crear, actualizar y eliminar productos.
 - **Validación y respuestas HTTP apropiadas**: uso de `Ok`, `CreatedAtAction`, `NoContent` y `NotFound`.
+- **Aplicación MVC con Razor**: rutas por controlador/acción y páginas para listar, crear, editar, ver detalle y eliminar registros.
+- **Gestión de dos entidades**: mantenimiento de Productos y Estudiantes con controladores y vistas independientes.
+
+## Cómo ejecutar cada sesión
+
+1. Abre una terminal en la carpeta de la sesión que quieras ejecutar.
+2. Restaura y ejecuta el proyecto:
+
+```bash
+dotnet restore
+dotnet run
+```
+
+3. En proyectos web, abre en el navegador la URL mostrada en la salida de la consola.
+
+## Últimos cambios del repositorio
+
+- Se agregó la carpeta **sesion4/TiendaWeb.Mvc** con una aplicación MVC completa.
+- Se incorporaron controladores y vistas para **Productos** y **Estudiantes**.
+- Se mantiene el uso de **EF Core InMemory** para facilitar las prácticas sin configuración adicional de base de datos.
