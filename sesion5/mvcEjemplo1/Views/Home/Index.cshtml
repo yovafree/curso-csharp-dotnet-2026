@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>@ViewBag.Titulo</h1>
+@{
+    if (ViewBag.Mensaje != null)
+    {
+        <div class="alert alert-success">@ViewBag.Mensaje</div>
+    }
+}
+
+@if (ViewBag.Productos != null)
+{
+    <ul>
+        @foreach (var producto in ViewBag.Productos)
+        {
+            <li>@producto</li>
+        }
+    </ul>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Multiplicando</th>
+            <th>Multiplicador</th>
+            <th>Resultado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int num = 5;
+            for (int i = 1; i < 11; i++)
+
+            {
+                <td colspan="3">Tabla de multiplicar del @i</td>
+                for(int j = 1; j < 11; j++)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@j</td>
+                        <td>@(i * j)</td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+</table>

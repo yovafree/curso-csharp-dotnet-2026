@@ -40,6 +40,8 @@ curso-csharp-dotnet-2026/
 │   └── ejemplo1/
 ├── sesion4/
 │   └── TiendaWeb.Mvc/
+├── sesion5/
+│   └── mvcEjemplo1/
 └── README.md
 ```
 
@@ -51,6 +53,7 @@ curso-csharp-dotnet-2026/
 | Sesion 2 | Introducción a ASP.NET: Minimal APIs (endpoints con `MapGet`), controladores estilo MVC (`ProductosController`) y uso básico de logging (`ILogger`) | [sesion2/ejemplo1](./sesion2/ejemplo1/) |
 | Sesion 3 | ASP.NET con Entity Framework Core: configuración de `DbContext`, base de datos en memoria (`UseInMemoryDatabase`) y CRUD completo de productos (GET, GET por id, POST, PUT, DELETE) | [sesion3/ejemplo1](./sesion3/ejemplo1/) |
 | Sesion 4 | ASP.NET Core MVC con vistas Razor: aplicación `TiendaWeb.Mvc`, `AppDbContext` con EF Core en memoria y CRUD web para Productos y Estudiantes | [sesion4/TiendaWeb.Mvc](./sesion4/TiendaWeb.Mvc/) |
+| Sesion 5 | ASP.NET Core MVC: manejo de parámetros en rutas (búsqueda, ordenamiento, paginación), formularios con `ProductoViewModel`, validaciones con Data Annotations (`[Required]`, `[Range]`) y binding de modelo en vistas Razor | [sesion5/mvcEjemplo1](./sesion5/mvcEjemplo1/) |
 
 ## Ejemplos incorporados recientemente
 
@@ -60,6 +63,9 @@ curso-csharp-dotnet-2026/
 - **Validación y respuestas HTTP apropiadas**: uso de `Ok`, `CreatedAtAction`, `NoContent` y `NotFound`.
 - **Aplicación MVC con Razor**: rutas por controlador/acción y páginas para listar, crear, editar, ver detalle y eliminar registros.
 - **Gestión de dos entidades**: mantenimiento de Productos y Estudiantes con controladores y vistas independientes.
+- **Parámetros en rutas MVC**: paso de parámetros opcionales (`search`, `sort`, `page`) desde la URL al controlador.
+- **ViewModels con validación**: `ProductoViewModel` con Data Annotations para validar datos en formularios Razor.
+- **Formularios con binding de modelo**: recepción y procesamiento de datos de formulario HTML mediante model binding en acciones `[HttpPost]`.
 
 ## Cómo ejecutar cada sesión
 
@@ -75,6 +81,9 @@ dotnet run
 
 ## Últimos cambios del repositorio
 
+- Se agregó la carpeta **sesion5/mvcEjemplo1** con ejemplos de parámetros en rutas MVC, ViewModels y validación con Data Annotations.
+- Se incorporó `ProductoViewModel` con validaciones `[Required]` y `[Range]` para formularios Razor.
+- Se implementó binding de modelo en acciones `[HttpPost]` para recibir datos de formularios HTML.
 - Se agregó la carpeta **sesion4/TiendaWeb.Mvc** con una aplicación MVC completa.
 - Se incorporaron controladores y vistas para **Productos** y **Estudiantes**.
 - Se mantiene el uso de **EF Core InMemory** para facilitar las prácticas sin configuración adicional de base de datos.
