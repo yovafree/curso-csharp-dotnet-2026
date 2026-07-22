@@ -42,6 +42,10 @@ curso-csharp-dotnet-2026/
 │   └── TiendaWeb.Mvc/
 ├── sesion5/
 │   └── mvcEjemplo1/
+├── sesion6/
+│   ├── docker-compose.yaml
+│   ├── backup.sql
+│   └── Ejemplo1/
 └── README.md
 ```
 
@@ -54,6 +58,7 @@ curso-csharp-dotnet-2026/
 | Sesion 3 | ASP.NET con Entity Framework Core: configuración de `DbContext`, base de datos en memoria (`UseInMemoryDatabase`) y CRUD completo de productos (GET, GET por id, POST, PUT, DELETE) | [sesion3/ejemplo1](./sesion3/ejemplo1/) |
 | Sesion 4 | ASP.NET Core MVC con vistas Razor: aplicación `TiendaWeb.Mvc`, `AppDbContext` con EF Core en memoria y CRUD web para Productos y Estudiantes | [sesion4/TiendaWeb.Mvc](./sesion4/TiendaWeb.Mvc/) |
 | Sesion 5 | ASP.NET Core MVC: manejo de parámetros en rutas (búsqueda, ordenamiento, paginación), formularios con `ProductoViewModel`, validaciones con Data Annotations (`[Required]`, `[Range]`) y binding de modelo en vistas Razor | [sesion5/mvcEjemplo1](./sesion5/mvcEjemplo1/) |
+| Sesion 6 | ASP.NET Core MVC con base de datos real (MySQL) usando EF Core: `docker-compose` para levantar MySQL, entidad `Curso` mapeada con `[Table]`/`[Column]` y `CursosController` para listar registros desde la base de datos | [sesion6/Ejemplo1](./sesion6/Ejemplo1/) |
 
 ## Ejemplos incorporados recientemente
 
@@ -66,6 +71,8 @@ curso-csharp-dotnet-2026/
 - **Parámetros en rutas MVC**: paso de parámetros opcionales (`search`, `sort`, `page`) desde la URL al controlador.
 - **ViewModels con validación**: `ProductoViewModel` con Data Annotations para validar datos en formularios Razor.
 - **Formularios con binding de modelo**: recepción y procesamiento de datos de formulario HTML mediante model binding en acciones `[HttpPost]`.
+- **Conexión a base de datos real con MySQL**: uso de `docker-compose.yaml` para levantar un contenedor de MySQL y `UseMySQL` en el `DbContext` para reemplazar la base de datos en memoria.
+- **Mapeo de entidades con EF Core**: entidad `Curso` mapeada a una tabla existente mediante `[Table]` y `[Column]`.
 
 ## Cómo ejecutar cada sesión
 
@@ -81,6 +88,8 @@ dotnet run
 
 ## Últimos cambios del repositorio
 
+- Se agregó la carpeta **sesion6/Ejemplo1** con conexión a MySQL mediante EF Core y `docker-compose.yaml` para levantar la base de datos.
+- Se incorporó la entidad `Curso` mapeada a la tabla `curso` y `CursosController` para listar registros desde la base de datos.
 - Se agregó la carpeta **sesion5/mvcEjemplo1** con ejemplos de parámetros en rutas MVC, ViewModels y validación con Data Annotations.
 - Se incorporó `ProductoViewModel` con validaciones `[Required]` y `[Range]` para formularios Razor.
 - Se implementó binding de modelo en acciones `[HttpPost]` para recibir datos de formularios HTML.

@@ -1,0 +1,35 @@
+@model IEnumerable<Ejemplo1.Models.Curso>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Codigo Curso</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th>Fecha de Creación</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Curso curso in Model)
+        {
+            <tr>
+                <td>@curso.CodCurso</td>
+                <td>@curso.Nombre</td>
+                <td>@curso.Descripcion</td>
+                <td>
+                    @if (curso.Estado == 1)
+                    {
+                        <text>Activo</text>
+                    }
+                    else
+                    {
+                        <text>Inactivo</text>
+                    }
+
+                </td>
+                <td>@curso.FecCreacion.ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
