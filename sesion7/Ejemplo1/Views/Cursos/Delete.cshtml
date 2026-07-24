@@ -1,0 +1,10 @@
+@model Ejemplo1.Models.Curso;
+
+<div>
+    <h2>Desea eliminar el Curso: @Model.Nombre</h1>
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" name="id" asp-for="CodCurso" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

@@ -40,9 +40,12 @@ curso-csharp-dotnet-2026/
 │   └── ejemplo1/
 ├── sesion4/
 │   └── TiendaWeb.Mvc/
-├── sesion5/
 │   └── mvcEjemplo1/
 ├── sesion6/
+│   ├── docker-compose.yaml
+│   ├── backup.sql
+│   └── Ejemplo1/
+├── sesion7/
 │   ├── docker-compose.yaml
 │   ├── backup.sql
 │   └── Ejemplo1/
@@ -59,6 +62,7 @@ curso-csharp-dotnet-2026/
 | Sesion 4 | ASP.NET Core MVC con vistas Razor: aplicación `TiendaWeb.Mvc`, `AppDbContext` con EF Core en memoria y CRUD web para Productos y Estudiantes | [sesion4/TiendaWeb.Mvc](./sesion4/TiendaWeb.Mvc/) |
 | Sesion 5 | ASP.NET Core MVC: manejo de parámetros en rutas (búsqueda, ordenamiento, paginación), formularios con `ProductoViewModel`, validaciones con Data Annotations (`[Required]`, `[Range]`) y binding de modelo en vistas Razor | [sesion5/mvcEjemplo1](./sesion5/mvcEjemplo1/) |
 | Sesion 6 | ASP.NET Core MVC con base de datos real (MySQL) usando EF Core: `docker-compose` para levantar MySQL, entidad `Curso` mapeada con `[Table]`/`[Column]` y `CursosController` para listar registros desde la base de datos | [sesion6/Ejemplo1](./sesion6/Ejemplo1/) |
+| Sesion 7 | ASP.NET Core MVC + EF Core con MySQL: CRUD completo de `Curso` (Index, Create, Details, Edit, Delete), confirmación de eliminación (`DeleteConfirmed`) y relación `Estudiante`-`Curso` con carga de navegación usando `Include` | [sesion7/Ejemplo1](./sesion7/Ejemplo1/) |
 
 ## Ejemplos incorporados recientemente
 
@@ -73,6 +77,9 @@ curso-csharp-dotnet-2026/
 - **Formularios con binding de modelo**: recepción y procesamiento de datos de formulario HTML mediante model binding en acciones `[HttpPost]`.
 - **Conexión a base de datos real con MySQL**: uso de `docker-compose.yaml` para levantar un contenedor de MySQL y `UseMySQL` en el `DbContext` para reemplazar la base de datos en memoria.
 - **Mapeo de entidades con EF Core**: entidad `Curso` mapeada a una tabla existente mediante `[Table]` y `[Column]`.
+- **CRUD web completo de Cursos**: acciones y vistas para listar, crear, ver detalle, editar y eliminar (`DeleteConfirmed`) cursos.
+- **Relación entre entidades en EF Core**: asociación `Curso (1) - Estudiante (N)` mediante navegación y llave foránea (`CodCurso`).
+- **Consulta con carga de navegación**: listado de estudiantes con su curso asociado usando `Include(e => e.Curso)`.
 
 ## Cómo ejecutar cada sesión
 
@@ -88,6 +95,11 @@ dotnet run
 
 ## Últimos cambios del repositorio
 
+- Se agregó la carpeta **sesion7/Ejemplo1** con ASP.NET Core MVC conectado a MySQL mediante EF Core.
+- Se implementó el CRUD completo de **Cursos** (`Index`, `Create`, `Details`, `Edit`, `Delete`) incluyendo confirmación de eliminación por `POST` (`DeleteConfirmed`).
+- Se incorporó la entidad **Estudiante** y su relación con **Curso** (`cod_curso`) para consultas relacionales.
+- Se agregó `EstudiantesController` con listado usando `Include(e => e.Curso)` para mostrar datos relacionados.
+- Se añadieron en **sesion7/** los archivos `docker-compose.yaml` y `backup.sql` para entorno y datos de práctica.
 - Se agregó la carpeta **sesion6/Ejemplo1** con conexión a MySQL mediante EF Core y `docker-compose.yaml` para levantar la base de datos.
 - Se incorporó la entidad `Curso` mapeada a la tabla `curso` y `CursosController` para listar registros desde la base de datos.
 - Se agregó la carpeta **sesion5/mvcEjemplo1** con ejemplos de parámetros en rutas MVC, ViewModels y validación con Data Annotations.

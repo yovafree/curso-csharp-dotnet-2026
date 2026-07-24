@@ -1,0 +1,21 @@
+@model IEnumerable<Ejemplo1.Models.Estudiante>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Codigo Estudiante</th>
+            <th>Nombre</th>
+            <th>Curso</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Estudiante estudiante in Model)
+        {
+            <tr>
+                <td>@estudiante.CodEstudiante</td>
+                <td>@estudiante.Nombre</td>
+                <td>@estudiante.Curso.Nombre</td>
+            </tr>
+        }
+    </tbody>
+</table>

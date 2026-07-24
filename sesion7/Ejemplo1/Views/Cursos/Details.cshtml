@@ -1,0 +1,31 @@
+@model Ejemplo1.Models.Curso;
+
+<h1>Detalles del Curso</h1>
+<a asp-action="Index" class="btn btn-secondary">Volver al Listado</a>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Codigo Curso</dt>
+        <dd class="col-sm-10">@Model.CodCurso</dd>
+
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.Nombre</dd>
+
+        <dt class="col-sm-2">Descripción</dt>
+        <dd class="col-sm-10">@Model.Descripcion</dd>
+
+        <dt class="col-sm-2">Estado</dt>
+        <dd class="col-sm-10">
+            @if (Model.Estado == 1)
+            {
+                <text>Activo</text>
+            }
+            else
+            {
+                <text>Inactivo</text>
+            }
+        </dd>
+
+        <dt class="col-sm-2">Fecha de Creación</dt>
+        <dd class="col-sm-10">@Model.FecCreacion.ToString("dd/MM/yyyy")</dd>
+    </dl>
+</div>

@@ -1,0 +1,45 @@
+@model IEnumerable<Ejemplo1.Models.Curso>
+
+<h1>Listado de Cursos</h1>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Crear Curso</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Codigo Curso</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th>Fecha de Creación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Curso curso in Model)
+        {
+            <tr>
+                <td>@curso.CodCurso</td>
+                <td>@curso.Nombre</td>
+                <td>@curso.Descripcion</td>
+                <td>
+                    @if (curso.Estado == 1)
+                    {
+                        <text>Activo</text>
+                    }
+                    else
+                    {
+                        <text>Inactivo</text>
+                    }
+
+                </td>
+                <td>@curso.FecCreacion.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@curso.CodCurso" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-action="Edit" asp-route-id="@curso.CodCurso" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@curso.CodCurso" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

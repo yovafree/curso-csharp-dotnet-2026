@@ -1,0 +1,24 @@
+@model Ejemplo1.Models.Curso;
+
+<h1>Editar Curso</h1>
+<a asp-action="Index" class="btn btn-secondary mt-3">Volver al Listado</a>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="CodCurso" />
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Descripcion"></label>
+        <input asp-for="Descripcion" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Estado"></label>
+        <select asp-for="Estado" class="form-control">
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
