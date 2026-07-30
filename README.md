@@ -40,6 +40,7 @@ curso-csharp-dotnet-2026/
 │   └── ejemplo1/
 ├── sesion4/
 │   └── TiendaWeb.Mvc/
+├── sesion5/
 │   └── mvcEjemplo1/
 ├── sesion6/
 │   ├── docker-compose.yaml
@@ -49,6 +50,10 @@ curso-csharp-dotnet-2026/
 │   ├── docker-compose.yaml
 │   ├── backup.sql
 │   └── Ejemplo1/
+├── sesion8/
+│   ├── update.sql
+│   ├── Ejemplo1/
+│   └── Ejemplo2/
 └── README.md
 ```
 
@@ -63,6 +68,7 @@ curso-csharp-dotnet-2026/
 | Sesion 5 | ASP.NET Core MVC: manejo de parámetros en rutas (búsqueda, ordenamiento, paginación), formularios con `ProductoViewModel`, validaciones con Data Annotations (`[Required]`, `[Range]`) y binding de modelo en vistas Razor | [sesion5/mvcEjemplo1](./sesion5/mvcEjemplo1/) |
 | Sesion 6 | ASP.NET Core MVC con base de datos real (MySQL) usando EF Core: `docker-compose` para levantar MySQL, entidad `Curso` mapeada con `[Table]`/`[Column]` y `CursosController` para listar registros desde la base de datos | [sesion6/Ejemplo1](./sesion6/Ejemplo1/) |
 | Sesion 7 | ASP.NET Core MVC + EF Core con MySQL: CRUD completo de `Curso` (Index, Create, Details, Edit, Delete), confirmación de eliminación (`DeleteConfirmed`) y relación `Estudiante`-`Curso` con carga de navegación usando `Include` | [sesion7/Ejemplo1](./sesion7/Ejemplo1/) |
+| Sesion 8 | Entity Framework Core con MySQL en dos enfoques: **Database First** (`Ejemplo1`, scaffold de `DbContext` y entidades desde base existente) y **Code First** (`Ejemplo2`, modelo `Autor`-`Libro`-`Prestamo` con migraciones `InitialCreate`, `AddFecNacimientoAutor` y `AddPrestamos`) | [sesion8](./sesion8/) |
 
 ## Ejemplos incorporados recientemente
 
@@ -80,6 +86,8 @@ curso-csharp-dotnet-2026/
 - **CRUD web completo de Cursos**: acciones y vistas para listar, crear, ver detalle, editar y eliminar (`DeleteConfirmed`) cursos.
 - **Relación entre entidades en EF Core**: asociación `Curso (1) - Estudiante (N)` mediante navegación y llave foránea (`CodCurso`).
 - **Consulta con carga de navegación**: listado de estudiantes con su curso asociado usando `Include(e => e.Curso)`.
+- **Database First con EF Core**: generación de `CursoDbContext` y entidades (`Curso`, `Estudiante`, `Notum`) a partir de una base de datos MySQL existente usando `dotnet ef dbcontext scaffold`.
+- **Code First con EF Core**: modelado por código de `Autor`, `Libro` y `Prestamo`, seguido de evolución de esquema mediante migraciones y actualización de base de datos con `dotnet ef database update`.
 
 ## Cómo ejecutar cada sesión
 
@@ -94,6 +102,12 @@ dotnet run
 3. En proyectos web, abre en el navegador la URL mostrada en la salida de la consola.
 
 ## Últimos cambios del repositorio
+
+- Se agregó la carpeta **sesion8/** con dos ejemplos de Entity Framework Core sobre MySQL.
+- En **sesion8/Ejemplo1** se incorporó el enfoque **Database First**, incluyendo scaffold de `DbContext` y entidades desde la base de datos existente.
+- En **sesion8/Ejemplo2** se incorporó el enfoque **Code First**, con entidades `Autor`, `Libro` y `Prestamo`.
+- Se agregaron migraciones en **sesion8/Ejemplo2**: `InitialCreate`, `AddFecNacimientoAutor` y `AddPrestamos`.
+- Se añadió el script **sesion8/update.sql** para apoyar la evolución del esquema/datos de la sesión.
 
 - Se agregó la carpeta **sesion7/Ejemplo1** con ASP.NET Core MVC conectado a MySQL mediante EF Core.
 - Se implementó el CRUD completo de **Cursos** (`Index`, `Create`, `Details`, `Edit`, `Delete`) incluyendo confirmación de eliminación por `POST` (`DeleteConfirmed`).
