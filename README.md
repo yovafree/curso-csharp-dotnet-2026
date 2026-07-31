@@ -54,6 +54,9 @@ curso-csharp-dotnet-2026/
 │   ├── update.sql
 │   ├── Ejemplo1/
 │   └── Ejemplo2/
+├── sesion9/
+│   ├── Sesion 9.json
+│   └── Ejemplo1/
 └── README.md
 ```
 
@@ -69,6 +72,7 @@ curso-csharp-dotnet-2026/
 | Sesion 6 | ASP.NET Core MVC con base de datos real (MySQL) usando EF Core: `docker-compose` para levantar MySQL, entidad `Curso` mapeada con `[Table]`/`[Column]` y `CursosController` para listar registros desde la base de datos | [sesion6/Ejemplo1](./sesion6/Ejemplo1/) |
 | Sesion 7 | ASP.NET Core MVC + EF Core con MySQL: CRUD completo de `Curso` (Index, Create, Details, Edit, Delete), confirmación de eliminación (`DeleteConfirmed`) y relación `Estudiante`-`Curso` con carga de navegación usando `Include` | [sesion7/Ejemplo1](./sesion7/Ejemplo1/) |
 | Sesion 8 | Entity Framework Core con MySQL en dos enfoques: **Database First** (`Ejemplo1`, scaffold de `DbContext` y entidades desde base existente) y **Code First** (`Ejemplo2`, modelo `Autor`-`Libro`-`Prestamo` con migraciones `InitialCreate`, `AddFecNacimientoAutor` y `AddPrestamos`) | [sesion8](./sesion8/) |
+| Sesion 9 | API ASP.NET Core protegida con JWT: autenticación con `JwtBearer`, endpoint `api/auth/login` para emitir tokens y `CursosController` con `[Authorize]` para exponer datos solo a clientes autenticados | [sesion9/Ejemplo1](./sesion9/Ejemplo1/) |
 
 ## Ejemplos incorporados recientemente
 
@@ -88,6 +92,9 @@ curso-csharp-dotnet-2026/
 - **Consulta con carga de navegación**: listado de estudiantes con su curso asociado usando `Include(e => e.Curso)`.
 - **Database First con EF Core**: generación de `CursoDbContext` y entidades (`Curso`, `Estudiante`, `Notum`) a partir de una base de datos MySQL existente usando `dotnet ef dbcontext scaffold`.
 - **Code First con EF Core**: modelado por código de `Autor`, `Libro` y `Prestamo`, seguido de evolución de esquema mediante migraciones y actualización de base de datos con `dotnet ef database update`.
+- **Autenticación JWT en ASP.NET Core**: configuración de `AddAuthentication().AddJwtBearer(...)` para validar tokens Bearer.
+- **Login para emisión de tokens**: endpoint `api/auth/login` que recibe credenciales y devuelve un JWT firmado.
+- **Protección de endpoints con `[Authorize]`**: acceso restringido a `api/cursos` para clientes autenticados.
 
 ## Cómo ejecutar cada sesión
 
@@ -102,6 +109,12 @@ dotnet run
 3. En proyectos web, abre en el navegador la URL mostrada en la salida de la consola.
 
 ## Últimos cambios del repositorio
+
+- Se agregó la carpeta **sesion9/Ejemplo1** con una API ASP.NET Core protegida con autenticación **JWT Bearer**.
+- Se incorporó `AuthController` con el endpoint **POST `api/auth/login`** para generar tokens JWT a partir de credenciales de ejemplo.
+- Se protegió `CursosController` con el atributo **`[Authorize]`**, dejando el listado de cursos accesible solo con token válido.
+- Se añadieron los modelos auxiliares de autenticación y la configuración base para trabajar con `Microsoft.AspNetCore.Authentication.JwtBearer` y `System.IdentityModel.Tokens.Jwt`.
+- Se agregó el material de apoyo **sesion9/Sesion 9.json** para la clase.
 
 - Se agregó la carpeta **sesion8/** con dos ejemplos de Entity Framework Core sobre MySQL.
 - En **sesion8/Ejemplo1** se incorporó el enfoque **Database First**, incluyendo scaffold de `DbContext` y entidades desde la base de datos existente.
