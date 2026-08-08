@@ -25,6 +25,7 @@ Entre los temas que este repositorio irá cubriendo se encuentran:
 - Visual Studio Code o Visual Studio
 - Extensión C# para VS Code
 - Git
+- Docker Desktop para las sesiones que utilizan MySQL
 
 ## Estructura del repositorio
 
@@ -57,6 +58,11 @@ curso-csharp-dotnet-2026/
 ├── sesion9/
 │   ├── Sesion 9.json
 │   └── Ejemplo1/
+├── sesion10/
+│   ├── docker-compose.yaml
+│   └── MenuComida/
+│       ├── MenuComida.Api/
+│       └── MenuComida.Web/
 └── README.md
 ```
 
@@ -73,6 +79,7 @@ curso-csharp-dotnet-2026/
 | Sesion 7 | ASP.NET Core MVC + EF Core con MySQL: CRUD completo de `Curso` (Index, Create, Details, Edit, Delete), confirmación de eliminación (`DeleteConfirmed`) y relación `Estudiante`-`Curso` con carga de navegación usando `Include` | [sesion7/Ejemplo1](./sesion7/Ejemplo1/) |
 | Sesion 8 | Entity Framework Core con MySQL en dos enfoques: **Database First** (`Ejemplo1`, scaffold de `DbContext` y entidades desde base existente) y **Code First** (`Ejemplo2`, modelo `Autor`-`Libro`-`Prestamo` con migraciones `InitialCreate`, `AddFecNacimientoAutor` y `AddPrestamos`) | [sesion8](./sesion8/) |
 | Sesion 9 | API ASP.NET Core protegida con JWT: autenticación con `JwtBearer`, endpoint `api/auth/login` para emitir tokens y `CursosController` con `[Authorize]` para exponer datos solo a clientes autenticados | [sesion9/Ejemplo1](./sesion9/Ejemplo1/) |
+| Sesion 10 | Solución por capas para un menú de comida: API REST con EF Core Code First y MySQL, entidades `Categoria` y `Plato`, relación uno a muchos, migraciones, datos semilla, OpenAPI/Swagger UI y proyecto web MVC | [sesion10/MenuComida](./sesion10/MenuComida/) |
 
 ## Ejemplos incorporados recientemente
 
@@ -95,6 +102,10 @@ curso-csharp-dotnet-2026/
 - **Autenticación JWT en ASP.NET Core**: configuración de `AddAuthentication().AddJwtBearer(...)` para validar tokens Bearer.
 - **Login para emisión de tokens**: endpoint `api/auth/login` que recibe credenciales y devuelve un JWT firmado.
 - **Protección de endpoints con `[Authorize]`**: acceso restringido a `api/cursos` para clientes autenticados.
+- **Solución con API y cliente web separados**: proyectos `MenuComida.Api` y `MenuComida.Web` agrupados en una solución `.slnx`.
+- **Modelo relacional para un menú**: entidades `Categoria` y `Plato` asociadas mediante una relación uno a muchos.
+- **Migraciones y datos semilla**: creación inicial del esquema y carga de categorías con EF Core Code First.
+- **Documentación interactiva de la API**: exposición del contrato OpenAPI mediante Swagger UI en desarrollo.
 
 ## Cómo ejecutar cada sesión
 
@@ -109,6 +120,13 @@ dotnet run
 3. En proyectos web, abre en el navegador la URL mostrada en la salida de la consola.
 
 ## Últimos cambios del repositorio
+
+- Se agregó la carpeta **sesion10/** con la solución **MenuComida**, compuesta por una API ASP.NET Core y una aplicación web MVC.
+- Se incorporaron las entidades **Categoria** y **Plato**, su relación uno a muchos y el `MenuDbContext` conectado a MySQL.
+- Se añadieron las migraciones `InicialMenu` y `SeedCategorias` para crear el esquema y cargar categorías iniciales.
+- Se implementó `CategoriasController` con operaciones para consultar, crear y actualizar categorías.
+- Se habilitó OpenAPI con Swagger UI para explorar la API durante el desarrollo.
+- Se incluyó `docker-compose.yaml` para ejecutar MySQL 8.0 localmente.
 
 - Se agregó la carpeta **sesion9/Ejemplo1** con una API ASP.NET Core protegida con autenticación **JWT Bearer**.
 - Se incorporó `AuthController` con el endpoint **POST `api/auth/login`** para generar tokens JWT a partir de credenciales de ejemplo.
