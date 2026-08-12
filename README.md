@@ -63,6 +63,11 @@ curso-csharp-dotnet-2026/
 │   └── MenuComida/
 │       ├── MenuComida.Api/
 │       └── MenuComida.Web/
+├── sesion11/
+│   ├── docker-compose.yaml
+│   └── MenuComida/
+│       ├── MenuComida.Api/
+│       └── MenuComida.Web/
 └── README.md
 ```
 
@@ -80,6 +85,7 @@ curso-csharp-dotnet-2026/
 | Sesion 8 | Entity Framework Core con MySQL en dos enfoques: **Database First** (`Ejemplo1`, scaffold de `DbContext` y entidades desde base existente) y **Code First** (`Ejemplo2`, modelo `Autor`-`Libro`-`Prestamo` con migraciones `InitialCreate`, `AddFecNacimientoAutor` y `AddPrestamos`) | [sesion8](./sesion8/) |
 | Sesion 9 | API ASP.NET Core protegida con JWT: autenticación con `JwtBearer`, endpoint `api/auth/login` para emitir tokens y `CursosController` con `[Authorize]` para exponer datos solo a clientes autenticados | [sesion9/Ejemplo1](./sesion9/Ejemplo1/) |
 | Sesion 10 | Solución por capas para un menú de comida: API REST con EF Core Code First y MySQL, entidades `Categoria` y `Plato`, relación uno a muchos, migraciones, datos semilla, OpenAPI/Swagger UI y proyecto web MVC | [sesion10/MenuComida](./sesion10/MenuComida/) |
+| Sesion 11 | Integración entre ASP.NET Core MVC y una API REST: CRUD de categorías y platos, servicios tipados con `HttpClient`, ViewModels con validación y vistas Razor para administrar el menú | [sesion11/MenuComida](./sesion11/MenuComida/) |
 
 ## Ejemplos incorporados recientemente
 
@@ -106,6 +112,10 @@ curso-csharp-dotnet-2026/
 - **Modelo relacional para un menú**: entidades `Categoria` y `Plato` asociadas mediante una relación uno a muchos.
 - **Migraciones y datos semilla**: creación inicial del esquema y carga de categorías con EF Core Code First.
 - **Documentación interactiva de la API**: exposición del contrato OpenAPI mediante Swagger UI en desarrollo.
+- **CRUD completo de categorías y platos**: endpoints REST para consultar, crear, actualizar y eliminar los elementos del menú.
+- **Cliente MVC para la API**: consumo de endpoints desde `MenuComida.Web` mediante servicios tipados registrados con `AddHttpClient`.
+- **ViewModels y validación web**: modelos específicos para categorías y platos con Data Annotations y selección de categoría en formularios.
+- **Vistas Razor para platos**: páginas para listar, crear, consultar, editar y eliminar platos desde la aplicación web.
 
 ## Cómo ejecutar cada sesión
 
@@ -120,6 +130,12 @@ dotnet run
 3. En proyectos web, abre en el navegador la URL mostrada en la salida de la consola.
 
 ## Últimos cambios del repositorio
+
+- Se agregó la carpeta **sesion11/** con la evolución de la solución **MenuComida**.
+- Se completó la API REST con consultas por id y eliminación de categorías, además del CRUD y filtrado por categoría para platos.
+- Se conectó **MenuComida.Web** con la API mediante `HttpClient`, `PlatoService` y `CategoriaService`, usando `ApiBaseUrl` como configuración base.
+- Se incorporaron `PlatoViewModel` y `CategoriaViewModel` para separar los modelos de presentación del contrato de la API.
+- Se añadieron controladores y vistas Razor para administrar platos, incluyendo validación de formularios y selección de categoría.
 
 - Se agregó la carpeta **sesion10/** con la solución **MenuComida**, compuesta por una API ASP.NET Core y una aplicación web MVC.
 - Se incorporaron las entidades **Categoria** y **Plato**, su relación uno a muchos y el `MenuDbContext` conectado a MySQL.

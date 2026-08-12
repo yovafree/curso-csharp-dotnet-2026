@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MenuComida.Api/MenuComida.Api.csproj" />
+  <Project Path="MenuComida.Web/MenuComida.Web.csproj" />
+</Solution>

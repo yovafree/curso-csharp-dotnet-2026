@@ -1,0 +1,43 @@
+@model List<MenuComida.Web.Models.PlatoViewModel>;
+
+<h1>Platos</h1>
+
+<a href="@Url.Action("Create", "Platos")" class="btn btn-success mb-3">Crear Nuevo Plato</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (PlatoViewModel plato in Model)
+        {
+            <tr>
+                <td>@plato.Nombre</td>
+                <td>@plato.Precio.ToString("C")</td>
+                <td>@plato.Descripcion</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(plato.ImagenUrl))
+                    {
+                        <img src="@plato.ImagenUrl" alt="@plato.Nombre" height="100px" />
+                    }
+                    else
+                    {
+                        <span>No hay imagen</span>
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("Details", "Platos", new { id = plato.Id })" class="btn btn-primary">Ver</a>
+                    <a href="@Url.Action("Edit", "Platos", new { id = plato.Id })" class="btn btn-warning">Editar</a>
+                    <a href="@Url.Action("Delete", "Platos", new { id = plato.Id })" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
