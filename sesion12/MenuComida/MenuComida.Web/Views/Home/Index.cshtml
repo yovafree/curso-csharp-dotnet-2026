@@ -1,0 +1,42 @@
+﻿@model List<MenuComida.Web.Models.PlatoViewModel>
+@{
+    ViewData["Title"] = "Lista de Platos";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Platos</h1>
+    <p>Aquí puedes ver todos los platos disponibles.</p>
+</div>
+
+<div>
+    Filtrar por categoría:
+    <form asp-action="Index" method="get" class="d-inline">
+        <select name="categoria" class="form-select d-inline w-auto">
+            <option value="">Todas</option>
+            @foreach (var categoria in ViewBag.Categorias)
+            {
+                <option value="@categoria.Id">@categoria.Nombre</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+</div>
+
+<div class="container text-center">
+  <div class="row align-items-start">
+    @foreach(var plato in Model){
+        <div class="col-md-4 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="@plato.ImagenUrl" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@plato.Nombre</h5>
+                    <p class="card-text">@plato.Descripcion <br /> <span class="badge text-bg-success">Precio: Q. @plato.Precio</span>
+                    <br /><span class="badge text-bg-primary"> Categoria: @plato.Categoria.Nombre</span>
+                    </p>
+                    <a asp-action="Details" asp-route-id="@plato.Id" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+    }
+  </div>
+</div>

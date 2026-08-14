@@ -1,0 +1,15 @@
+@model MenuComida.Web.Models.PlatoViewModel;
+
+<h1>Detalles del Plato</h1>
+
+<a asp-action="Index" class="btn btn-secondary mb-3">Volver</a>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Nombre</h5>
+        <p class="card-text"><strong>Precio:</strong> @Model.Precio.ToString("C")</p>
+        <p class="card-text"><strong>Descripción:</strong> @Model.Descripcion</p>
+        <p class="card-text"><strong>Imagen:</strong> <img src="@Model.ImagenUrl" alt="@Model.Nombre" height="350px" /></p>
+        <p class="card-text"><strong>Categoria:</strong> @Model.Categoria.Nombre</p>
+    </div>
+</div>

@@ -2,7 +2,7 @@
 
 # Curso de C# y .NET 10
 
-Repositorio base del curso **C# y .NET 10: de los fundamentos al nivel intermedio**, con foco en el aprendizaje progresivo del desarrollo web con **ASP.NET**.
+Repositorio del curso **C# y .NET 10: de los fundamentos al nivel intermedio**, completado en 12 sesiones con foco en el aprendizaje progresivo del desarrollo web con **ASP.NET**.
 
 La idea de este repositorio es organizar el contenido por sesiones, de forma que cada carpeta represente una clase, práctica o bloque temático del curso.
 
@@ -68,6 +68,11 @@ curso-csharp-dotnet-2026/
 │   └── MenuComida/
 │       ├── MenuComida.Api/
 │       └── MenuComida.Web/
+├── sesion12/
+│   ├── docker-compose.yaml
+│   └── MenuComida/
+│       ├── MenuComida.Api/
+│       └── MenuComida.Web/
 └── README.md
 ```
 
@@ -86,6 +91,7 @@ curso-csharp-dotnet-2026/
 | Sesion 9 | API ASP.NET Core protegida con JWT: autenticación con `JwtBearer`, endpoint `api/auth/login` para emitir tokens y `CursosController` con `[Authorize]` para exponer datos solo a clientes autenticados | [sesion9/Ejemplo1](./sesion9/Ejemplo1/) |
 | Sesion 10 | Solución por capas para un menú de comida: API REST con EF Core Code First y MySQL, entidades `Categoria` y `Plato`, relación uno a muchos, migraciones, datos semilla, OpenAPI/Swagger UI y proyecto web MVC | [sesion10/MenuComida](./sesion10/MenuComida/) |
 | Sesion 11 | Integración entre ASP.NET Core MVC y una API REST: CRUD de categorías y platos, servicios tipados con `HttpClient`, ViewModels con validación y vistas Razor para administrar el menú | [sesion11/MenuComida](./sesion11/MenuComida/) |
+| Sesion 12 | Cierre del curso con la aplicación MenuComida completa: catálogo público de platos, filtro por categoría, vista de detalle, navegación final y protección de la integridad referencial al eliminar categorías | [sesion12/MenuComida](./sesion12/MenuComida/) |
 
 ## Ejemplos incorporados recientemente
 
@@ -116,6 +122,9 @@ curso-csharp-dotnet-2026/
 - **Cliente MVC para la API**: consumo de endpoints desde `MenuComida.Web` mediante servicios tipados registrados con `AddHttpClient`.
 - **ViewModels y validación web**: modelos específicos para categorías y platos con Data Annotations y selección de categoría en formularios.
 - **Vistas Razor para platos**: páginas para listar, crear, consultar, editar y eliminar platos desde la aplicación web.
+- **Catálogo público de platos**: página de inicio con tarjetas, imágenes, precios, categorías y acceso al detalle de cada plato.
+- **Filtrado del menú por categoría**: integración del formulario de filtro con el endpoint de platos por categoría.
+- **Integridad referencial en eliminaciones**: validación para impedir que se eliminen categorías que todavía tienen platos asociados y presentación del mensaje en la aplicación web.
 
 ## Cómo ejecutar cada sesión
 
@@ -130,6 +139,13 @@ dotnet run
 3. En proyectos web, abre en el navegador la URL mostrada en la salida de la consola.
 
 ## Últimos cambios del repositorio
+
+- Se agregó la carpeta **sesion12/** con la versión final de **MenuComida** y se completó el recorrido de 12 sesiones del curso.
+- Se transformó la página de inicio en un catálogo público con tarjetas de platos, información de categoría, filtro y vista de detalle.
+- Se actualizaron las consultas de la API para incluir la categoría asociada en las respuestas de platos.
+- Se corrigió la ruta utilizada por el cliente web para consultar platos por categoría.
+- Se deshabilitó la eliminación en cascada y se impide eliminar una categoría con platos asociados, propagando el mensaje de validación hasta la vista Razor.
+- Se completó la navegación principal con accesos al catálogo, la administración de platos y la administración de categorías.
 
 - Se agregó la carpeta **sesion11/** con la evolución de la solución **MenuComida**.
 - Se completó la API REST con consultas por id y eliminación de categorías, además del CRUD y filtrado por categoría para platos.

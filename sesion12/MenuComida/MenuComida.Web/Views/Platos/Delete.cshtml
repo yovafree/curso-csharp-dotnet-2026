@@ -1,0 +1,11 @@
+@model MenuComida.Web.Models.PlatoViewModel;
+
+<h1>Desea eliminar el Plato "@Model.Nombre"?</h1>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
